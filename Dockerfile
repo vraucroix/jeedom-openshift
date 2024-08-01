@@ -7,7 +7,7 @@ ARG WEBSERVER_HOME=/var/www/html
 ENV WEBSERVER_HOME=${WEBSERVER_HOME}
 ARG VERSION=V4-stable
 ENV VERSION=${VERSION}
-ARG DATABASE=1
+ARG DATABASE=0
 ENV DATABASE=${DATABASE}
 
 # labels follows opencontainers convention
@@ -31,7 +31,7 @@ RUN sh /tmp/install.sh -s 1 -v ${VERSION} -w ${WEBSERVER_HOME} -d ${DATABASE} -i
 # step_2_mainpackage
 RUN sh /tmp/install.sh -s 2 -v ${VERSION} -w ${WEBSERVER_HOME} -d ${DATABASE} -i docker
 # step_3_database
-RUN sh /tmp/install.sh -s 3 -v ${VERSION} -w ${WEBSERVER_HOME} -d ${DATABASE} -i docker
+#RUN sh /tmp/install.sh -s 3 -v ${VERSION} -w ${WEBSERVER_HOME} -d ${DATABASE} -i docker
 # step_4_apache
 RUN sh /tmp/install.sh -s 4 -v ${VERSION} -w ${WEBSERVER_HOME} -d ${DATABASE} -i docker
 # step_5_php
