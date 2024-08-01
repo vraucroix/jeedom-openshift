@@ -57,5 +57,5 @@ RUN apt-get clean && \
 RUN touch initialisation
 
 EXPOSE 80
-COPY install/OS_specific/Docker/init.sh /root/
-CMD ["bash", "/root/init.sh"]
+COPY install/OS_specific/Docker/init.sh /jeedom-root/
+CMD ["bash", "/jeedom-root/init.sh"]
